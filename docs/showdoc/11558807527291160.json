@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11558807527291160",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "根据biz获取公众号基本信息",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n- 根据biz获取公众号基本信息（关于公众号页面）\n\n##### 收费标准\n- `按调用次数：5分钱/次`\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/getbiz`\n\n```\ncurl --location &#039;http://data.wxrank.com/weixin/getbiz?key=xxx&amp;biz=MzI2NDk5NzA0Mw==&#039;\n```\n\n##### 请求方式\n- GET / POST\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n| biz | 是 | string | 公众号biz |\n\n##### 返回示例\n\n```\n{\n    &quot;code&quot;: 0,\n    &quot;msg&quot;: &quot;数据获取成功&quot;,\n    &quot;data&quot;: [\n        {\n            &quot;key&quot;: &quot;公众号简介&quot;,\n            &quot;value&quot;: &quot;36氪是服务中国新经济参与者的卓越品牌和开创性平台，提供新锐深度的商业报道，强调趋势和价值，我们的slogan是：让一部分人先看到未来。&quot;\n        },\n        {\n            &quot;key&quot;: &quot;微信号&quot;,\n            &quot;value&quot;: &quot;wow36kr&quot;\n        },\n        {\n            &quot;key&quot;: &quot;认证类型&quot;,\n            &quot;value&quot;: &quot;企业&quot;\n        },\n        {\n            &quot;key&quot;: &quot;认证主体&quot;,\n            &quot;value&quot;: &quot;北京多氪信息科技有限公司&quot;\n        },\n        {\n            &quot;key&quot;: &quot;商标保护&quot;,\n            &quot;value&quot;: &quot;36氪&quot;\n        },\n        {\n            &quot;key&quot;: &quot;授权第三方服务&quot;,\n            &quot;value&quot;: [\n                &quot;壹伴&quot;,\n                &quot;秀米&quot;,\n                &quot;36氪&quot;,\n                &quot;抽奖助手&quot;,\n                &quot;钉钉 订阅号平台&quot;\n            ]\n        },\n        {\n            &quot;key&quot;: &quot;名称记录&quot;,\n            &quot;value&quot;: [\n                &quot;2018年01月01日 “品新传媒”账号迁移改名“36氪”&quot;,\n                &quot;2017年12月18日 注册“品新传媒”&quot;\n            ]\n        },\n        {\n            &quot;key&quot;: &quot;IP属地&quot;,\n            &quot;value&quot;: &quot;北京&quot;\n        }\n    ]\n}\n```\n ##### 返回参数说明\n\n|参数名|类型|说明|\n|:-----  |:-----|-----  |\n|key |string | 字段名 |\n|value |string | 字段值 |\n\n ##### 备注\n\n&gt; `code 状态判断`\n- 0：获取成功\n- 1000：积分不足\n- 1001：biz不能为空\n- 9999：QPS超过上限，请稍后再试（每秒不能超过3个）\n\n&gt; 提醒：code=0，扣积分\n\n\n\n\n",
+    "s_number": "11",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2025-07-10 11:47:06",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}

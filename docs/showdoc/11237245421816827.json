@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11237245421816827",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "实时获取公众号搜索列表",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n- 实时获取公众号搜索列表（支持分页）\n\n##### 收费标准\n- `按调用次数：1毛钱/次`\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/getsu`\n\n##### 请求方式\n- GET / POST\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n| keyword | 是 | string | 搜索关键词 |\n| page | 否 | int | 分页页码，默认1 |\n\n##### 请求示例\n```\ncurl --location &#039;http://data.wxrank.com/weixin/getsu&#039; \\\n--header &#039;Content-Type: application/json&#039; \\\n--data &#039;{\n    &quot;key&quot;: &quot;xxx&quot;,\n    &quot;keyword&quot;: &quot;丁香医生&quot;\n}&#039;\n```\n\n##### 返回示例\n```\n{\n    &quot;code&quot;: 0,\n    &quot;data&quot;: [\n        {\n            &quot;wx_id&quot;: &quot;DingXiangYiSheng&quot;,\n            &quot;wx_biz&quot;: &quot;MjA1ODMxMDQwMQ==&quot;,\n            &quot;wx_user&quot;: &quot;wxid_4302923029011&quot;,\n            &quot;wx_name&quot;: &quot;丁香医生&quot;,\n            &quot;signature&quot;: &quot;与一群有知识、有温度的医生，共同分享健康知识。 来丁香医生App/小程序，查疾病、查药品，线上问三甲名医。&quot;,\n            &quot;headImgUrl&quot;: &quot;http://wx.qlogo.cn/mmhead/Q3auHgzwzM6ZgyZRj3WvD0BTVSBiaaXQC4MBeaVRbIYNUibs1dk1ykPw/0&quot;\n        },\n        {\n            &quot;wx_id&quot;: &quot;JobmdCN&quot;,\n            &quot;wx_biz&quot;: &quot;MjM5MDA4MTk2MA==&quot;,\n            &quot;wx_user&quot;: &quot;gh_f4f286da622c&quot;,\n            &quot;wx_name&quot;: &quot;丁香人才&quot;,\n            &quot;signature&quot;: &quot;丁香人才是丁香园旗下专业医疗招聘平台，为您提供内科、外科、检验、康复、放射、急诊、中医等科室的公立医院、民营医院医生招聘信息。提供护士、护理、药师、教师、生物医药等招聘信息。更有简历优化、面试指导等干货，为您的求职之路提供完整的一站式服务&quot;,\n            &quot;headImgUrl&quot;: &quot;http://wx.qlogo.cn/mmhead/Q3auHgzwzM5iccQQibNlc8nG5LWwSV2LsYgCz6w4P6cm3cbIIXicFVRFw/0&quot;\n        },\n        {\n            &quot;wx_id&quot;: &quot;FZDingXiangClinics&quot;,\n            &quot;wx_biz&quot;: &quot;MzU5NTE0NTk3Mg==&quot;,\n            &quot;wx_user&quot;: &quot;gh_364424ef2196&quot;,\n            &quot;wx_name&quot;: &quot;福州丁香诊所&quot;,\n            &quot;signature&quot;: &quot;该公众号已停止服务，请新老客户前往新公众号“丁香云医疗”，我们将继续竭诚为您提供可靠、专业、用心的医疗服务。联系电话0591-88688520。&quot;,\n            &quot;headImgUrl&quot;: &quot;http://wx.qlogo.cn/mmhead/Q3auHgzwzM5n6Utialdx1Kym0OCpSdUkD33kQudU3shs8nMicEx6QqCw/0&quot;\n        }\n    ],\n    &quot;msg&quot;: &quot;剩余33994积分&quot;\n}\n```\n\n##### 返回参数说明\n\n|参数名|类型|说明|\n|:-----  |:-----|-----  |\n|wx_id |string |公众号ID（微信号） |\n|wx_biz |string |公众号biz |\n|wx_user |string |公众号原始ID |\n|wx_name |string |公众号名称 |\n|signature |string |公众号简介 |\n|headImgUrl |string |公众号头像链接 |\n\n##### 数据来源于`添加朋友`，选择公众号模块\n![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=5c02af9c13cfa5766a47961b46668209&amp;file=file.png)![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=087c6342bbee0927c2ae9bc53078f393&amp;file=file.png)\n\n&gt; 注意：列表是没有总条数，当data数组等于[]的时候，说明已经是最后一页\n\n##### 备注\n\n&gt; `code 状态判断`\n- 0：获取成功\n- 1000：积分不足\n- 1001：关键词不能为空\n- 1002：请求失败，请重试\n- 1003：请求超时，请重试\n- 1008：请求频繁，请稍候\n- 9999：QPS超过上限，请稍后再试（每秒不能超过3个）\n\n&gt; 提醒：code=0，扣积分\n",
+    "s_number": "3",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2026-01-27 21:05:23",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11231390880949074",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "实时获取搜一搜文章列表",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n- 实时获取搜一搜文章列表（支持分页）\n\n##### 收费标准\n- `按调用次数：1毛钱/次`\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/getso`\n\n##### 请求方式\n- GET / POST\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n| keyword | 是 | string | 搜索关键词 |\n| sort_type | 否 | int | 排序：0.不限（默认） 2.最新 4.最热 |\n| page | 否 | int | 分页页码，默认1 |\n\n##### 请求示例\n```\ncurl --location &#039;http://data.wxrank.com/weixin/getso&#039; \\\n--header &#039;Content-Type: application/json&#039; \\\n--data &#039;{\n    &quot;key&quot;: &quot;xxx&quot;,\n    &quot;sort_type&quot;: &quot;2&quot;,\n    &quot;keyword&quot;: &quot;丁香&quot;\n}&#039;\n```\n\n##### 返回示例\n```\n{\n    &quot;code&quot;: 0,\n    &quot;data&quot;: [\n        {\n            &quot;wx_name&quot;: &quot;平草木记&quot;,\n            &quot;pub_time&quot;: &quot;2024-06-06 13:15:34&quot;,\n            &quot;title&quot;: &quot;观察一棵树｜&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;•小满&quot;,\n            &quot;desc&quot;: &quot;中医认为，公&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;具有温暖脾胃、助长阳气、暖肾等功效，母&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;可以起到温中降逆、补肾助阳的作用。观察今年的&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;树结果较少，&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;果也存在大小年现象。&quot;,\n            &quot;art_url&quot;: &quot;http://mp.weixin.qq.com/s?__biz=MzkxNTMzNDY4NA==&amp;mid=2247486221&amp;idx=1&amp;sn=ff8c08d877ea47cf1307e3be73761cc6&quot;,\n            &quot;pic_url&quot;: &quot;https://mmbiz.qpic.cn/sz_mmbiz_jpg/FQPbXVHVWtEoqKMV3DZibZkwxgvGXTe4fRrK0ic1GMYJJWf6Hrr2ia1Hia8NJksLeEibnk1ibGC46zrMH5yFGnrtxKNQ/0?wx_fmt=jpeg&quot;\n        },\n        {\n            &quot;wx_name&quot;: &quot;黑龙江大学报&quot;,\n            &quot;pub_time&quot;: &quot;2024-06-06 13:00:44&quot;,\n            &quot;title&quot;: &quot;&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;轻舞，香萦心扉｜装点校园里的一抹紫色&quot;,\n            &quot;desc&quot;: &quot;在中国传统文化中，&lt;em class=\\&quot;highlight\\&quot;&gt;丁香&lt;/em&gt;花象征着高洁、坚强的品质，香气虽不张扬，却持久深远，正如那些默默奉献、坚韧不拔的人们一样，他们的精神品质值得所有黑大学子学习和传承。&quot;,\n            &quot;art_url&quot;: &quot;http://mp.weixin.qq.com/s?__biz=MzUyOTc4MDE5Nw==&amp;mid=2247499149&amp;idx=1&amp;sn=a179fadf3ed8e91c107d53425cc0f8d3&quot;,\n            &quot;pic_url&quot;: &quot;https://mmbiz.qpic.cn/sz_mmbiz_jpg/gP02Ps38ziabtciaYHsQic8rnokFw6GzplH2vZDWc6QFaLmHBMMzLeFQCbBP9NOuDgaQfMVbPlAdH6UjMQfRJoKUg/0?wx_fmt=jpeg&quot;\n        }\n    ],\n    &quot;msg&quot;: &quot;剩余36474积分&quot;\n}\n```\n\n##### 返回参数说明\n\n|参数名|类型|说明|\n|:-----  |:-----|-----  |\n|wx_name |string |公众号名称 |\n|pub_time |string |发布时间 |\n|title |string |文章标题 |\n|desc |string |文章摘要 |\n|art_url |string |文章链接 |\n|pic_url |string |文章封面 |\n\n##### 数据来源于搜一搜进来，选择`文章`这个模块（最新 or 最热）\n![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=2d392a97f05be974c4480682de836a95&amp;file=file.png)\n\n&gt; 注意：列表是没有总条数，当data数组等于[]的时候，说明已经是最后一页\n\n##### 备注\n\n&gt; `code 状态判断`\n- 0：获取成功\n- 1000：积分不足\n- 1001：关键词不能为空\n- 1002：请求失败，请重试\n- 1003：请求超时，请重试\n- 1004：返回空集，请重试\n- 1008：请求频繁，请稍候\n- 9999：QPS超过上限，请稍后再试（每秒不能超过3个）\n\n&gt; 提醒：code=0，扣积分\n",
+    "s_number": "4",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2026-01-27 21:05:37",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}

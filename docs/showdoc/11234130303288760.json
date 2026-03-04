@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11234130303288760",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "获取当前剩余积分",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n\n- 获取当前剩余积分\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/score?key=xxx`\n\n##### 请求方式\n- GET\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n\n##### 返回示例\n```\n{\n    &quot;code&quot;: 0,\n    &quot;msg&quot;: &quot;剩余9810积分&quot;\n}\n```\n",
+    "s_number": "15",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2025-01-04 11:37:43",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}

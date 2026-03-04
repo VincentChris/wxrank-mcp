@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11133589262825168",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "实时获取公众号文章阅读",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n- 实时获取公众号文章阅读、点赞、在看数\n\n##### 收费标准\n- `按调用次数：2分钱/次`\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/getrk`\n\n```\n// 尽量采用post请求方式，减少url编码出现的问题\ncurl --location &#039;http://data.wxrank.com/weixin/getrk&#039; \\\n--header &#039;Content-Type: application/json&#039; \\\n--data &#039;{\n    &quot;key&quot;: &quot;xxx&quot;,\n    &quot;url&quot;: &quot;https://mp.weixin.qq.com/s?__biz=MzUzMjY0NDY4Ng==&amp;mid=2247504367&amp;idx=1&amp;sn=09d0f7e717a0bd73f7b515fe222270a9#rd&quot;,\n    &quot;comment_id&quot;: &quot;4232577569528594434&quot;\n}&#039;\n```\n\n&gt; python语言调用示例\n\n```\nimport requests\nimport json\n\napikey = &#039;your_api_key&#039;;\nurl = &#039;http://data.wxrank.com/weixin/getrk&#039;\ndata = {\n    &quot;key&quot;: apikey,\n    &quot;url&quot;: &quot;https://mp.weixin.qq.com/s?__biz=MzUzMjY0NDY4Ng==&amp;mid=2247504367&amp;idx=1&amp;sn=09d0f7e717a0bd73f7b515fe222270a9#rd&quot;,\n    &quot;comment_id&quot;: &quot;4232577569528594434&quot;\n}\nheaders = {\n    &#039;Content-Type&#039;: &#039;application/json&#039;\n}\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\nprint(response.text)\n\n```\n\n##### 请求方式\n- GET / POST\n\n`如果以get方式请求，url务必要做urlencode，因为url链接中往往会有&amp;连接符，需要转义处理`\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n| url | 是 | string | 文章链接，仅支持长链接（例如：https://mp.weixin.qq.com/s?__biz=xxx==&amp;mid=xxx&amp;idx=1&amp;sn=xxx） |\n| comment_id | 否 | string | 文章留言id，如果需要返回留言数，需要提供该参数 |\n\n&gt; url若是短链，需要提前转一下长链，通过文章解析接口：https://www.showdoc.com.cn/2343746579263506/11558501783383049\n![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=5b9e336184fa040a1a34c6fff3868ae1&amp;file=file.png)\n\n##### 返回示例\n\n```\n{\n    &quot;code&quot;: 0,\n    &quot;data&quot;: {\n        &quot;read_num&quot;: 100001,\n        &quot;like_num&quot;: 4246,\n        &quot;look_num&quot;: 977,\n        &quot;share_num&quot;: 4635,\n        &quot;collect_num&quot;: 1130,\n        &quot;reward_count&quot;: 70,\n        &quot;comment_count&quot;: 17\n    },\n    &quot;msg&quot;: &quot;剩余875积分&quot;\n}\n```\n ##### 返回参数说明\n\n|参数名|类型|说明|\n|:-----  |:-----|-----  |\n|read_num |int |阅读数 |\n|like_num |int |点赞数（大拇指） |\n|look_num |int |在看数（爱心图标） |\n|share_num |int |分享数（转发图标） |\n|collect_num |int |收藏数（隐藏数据） |\n|reward_count |int |赞赏数，又名喜欢作者 |\n|comment_count |int |留言数，传comment_id才会返回 |\n\n##### 备注\n\n&gt; `code 状态判断`\n- 0：获取成功\n- 1000：积分不足\n- 1001：文章链接为空（必须是公众号文章链接）\n- 1002：文章验证失败（文章链接解析失败）\n- 1003：获取失败，请重试\n- 1004：服务异常，请重试\n- 9999：QPS超过上限，请稍后再试（每秒不能超过10个）\n\n&gt; 提醒：code=0，扣积分\n\n",
+    "s_number": "1",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2025-12-11 14:09:10",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}

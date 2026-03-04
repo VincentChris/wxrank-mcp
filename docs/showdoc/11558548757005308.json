@@ -1,0 +1,20 @@
+{
+  "error_code": 0,
+  "data": {
+    "page_id": "11558548757005308",
+    "author_uid": "431428",
+    "author_username": "marixh@163.com",
+    "item_id": "2343746579263506",
+    "cat_id": "0",
+    "page_title": "根据biz获取公众号原始id",
+    "page_comments": "",
+    "page_content": "##### 简要描述\n- 根据biz获取公众号原始id\n\n##### 收费标准\n- `按调用次数：5分钱/次`\n\n##### 请求URL\n- ` http://data.wxrank.com/weixin/getinfo`\n\n```\ncurl --location &#039;http://data.wxrank.com/weixin/getinfo?key=xxx&amp;biz=MzIzOTU0NTQ0MA==&#039;\n```\n\n##### 请求方式\n- GET / POST\n\n##### 参数\n\n|参数名|必选|类型|说明|\n|:----    |:---|:----- |-----  |\n| key | 是 | string | 密钥 |\n| biz | 是 | string | 公众号biz |\n\n##### 返回示例\n\n```\n{\n  &quot;code&quot;: 0,\n  &quot;msg&quot;: &quot;数据获取成功&quot;,\n  &quot;data&quot;: {\n    &quot;name&quot;: &quot;阿里云开发者&quot;,\n    &quot;user_name&quot;: &quot;gh_7fc9311f04ad&quot;,\n    &quot;signature&quot;: &quot;阿里巴巴官方技术号，关于阿里的技术创新均呈现于此。&quot;,\n    &quot;hd_head_img&quot;: &quot;http://mmbiz.qpic.cn/mmbiz_png/Z6bicxIx5naI1jwOfnA1w4PL2LhwNia76vBRfzqaQVVVlqiaLjmWYQXHsn1FqBHhuGVcxEHjxE9tibBFBjcB352fhQ/0?wx_fmt=png&quot;\n  }\n}\n```\n ##### 返回参数说明\n\n|参数名|类型|说明|\n|:-----  |:-----|-----  |\n|name |string |公众号名称 |\n|username |string |公众号原始id |\n|signature |string |公众号简介 |\n|hd_head_img |string |公众号头像 |\n\n ##### 备注\n\n&gt; `code 状态判断`\n- 0：获取成功\n- 1000：积分不足\n- 1001：biz不能为空\n- 9999：QPS超过上限，请稍后再试（每秒不能超过5个）\n\n&gt; 提醒：code=0，扣积分\n\n\n\n",
+    "s_number": "10",
+    "is_del": "0",
+    "is_draft": "0",
+    "addtime": "2025-07-23 22:14:21",
+    "ext_info": "",
+    "attachment_count": 0,
+    "unique_key": ""
+  }
+}
