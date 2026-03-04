@@ -57,7 +57,7 @@ pnpm build
   "mcpServers": {
     "wxrank-local": {
       "command": "node",
-      "args": ["/Users/vincent/Documents/workspace/code/personal/baobao/wxrank-mcp/dist/index.js"],
+      "args": ["/path/to/wxrank-mcp/dist/index.js"],
       "env": {
         "WXRANK_API_KEY": "你的wxrank密钥"
       }
@@ -103,7 +103,7 @@ export WXRANK_API_KEY="你的key"
 pnpm run smoke
 
 # 方式2：命令行传参
-pnpm run smoke -- --key "你的key" --wxid "gh_3037fb937d57"
+pnpm run smoke -- --key "你的key" --wxid "gh_xxxxxxxxxxxx"
 ```
 
 可选参数：
